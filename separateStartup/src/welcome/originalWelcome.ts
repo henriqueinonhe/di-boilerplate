@@ -4,8 +4,12 @@ type Dependencies = {
   logger: (string: string) => void;
 };
 
-export const makeAlternateWelcome =
+export const makeOriginalWelcome =
   ({ logger }: Dependencies): Welcome =>
   (name) => {
-    logger(`HELLLOOOOOOOO, ${name}!`);
+    const message = `Welcome, ${name}!`;
+
+    logger(message);
+
+    return message;
   };
